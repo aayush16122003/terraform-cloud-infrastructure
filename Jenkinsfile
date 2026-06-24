@@ -44,6 +44,18 @@ pipeline {
 
         }
 
+        stage('Terraform Apply') {
+
+            steps {
+
+                input 'Approve Terraform Apply?'
+
+                sh 'terraform apply -auto-approve'
+
+            }
+
+        }
+
     }
 
 }
